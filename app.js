@@ -5,7 +5,9 @@
 
 var express = require('express')
   , routes = require('./routes')
-  , mongoat = require('mongoat')
+  , server_conf = require('./conf/server.js')
+  , db_conf = require('./conf/db.js')
+  , mongoat = require('mongoat')(db_conf.db_name, db_conf.host, db_conf.port)
   , build = require('./lib/build.js')
   , sort = require('./lib/sort.js');
 
@@ -54,7 +56,7 @@ mongoat.db.open(function(e, db_client){
       routes.popular(resources, req, res);
     });
 
-    app.listen(3000);
+    app.listen(server_conf.port);
     console.log("Graph with "+Object.keys(resources.graph).length+" nodes listening on port %d in %s mode", app.address().port, app.settings.env);
   });
 

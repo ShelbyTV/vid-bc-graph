@@ -1,4 +1,5 @@
-var mongoat = require('mongoat');
+var db_conf = require('../conf/db.js');
+var mongoat = require('mongoat')(db_conf.db_name, db_conf.host, db_conf.port);
 var build = require('../lib/build.js');
 var build_size = 1000;
 
