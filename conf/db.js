@@ -7,7 +7,7 @@ var db_confs = {
   'production' : {
     db_name : 'nos-production',
     host : '10.183.192.15',
-    port : 27019
+    port : 27018
   }
 };
 
