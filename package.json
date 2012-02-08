@@ -6,6 +6,7 @@
        "express" : "=2.5.6"
       , "mongoat" : "git+ssh://git@github.com:ShelbyTV/mongoat.git"
       , "request" : "=2.9.100"
+      , "buffalo" : "git+ssh://git@github.com:mkrecny/node-buffalo.git"
   }
   , "main": "./index.js"
 }

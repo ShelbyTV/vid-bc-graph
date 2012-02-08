@@ -1,6 +1,6 @@
-var BUILD_SIZE = process.argv[2];
-if (!BUILD_SIZE){
-  console.error('SPECIFY GRAPH SIZE');
+var DAYS = process.argv[2];
+if (!DAYS){
+  console.error('Specify graph size in days');
   process.exit();
 }
 
@@ -35,7 +35,7 @@ app.configure('production', function(){
 });
 
 mongoat.db.open(function(e, db_client){
-  build(db_client, BUILD_SIZE, mongoat.do_query, function(e, graph){
+  build(db_client, DAYS, mongoat.do_query, function(e, graph){
     var resources = {
       graph : graph,
       do_query : mongoat.do_query,

@@ -23,5 +23,6 @@ exports.popular = function(r, req, res){
 };
 
 exports.rebuild = function(r, req, res, cb){
-  build(r.db_client, req.query.size, r.do_query, cb);  
+  console.log('rebuilding graph, covering ', req.query.days, ' days');
+  build(r.db_client, req.query.days, r.do_query, cb);  
 };
