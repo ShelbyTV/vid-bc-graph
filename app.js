@@ -1,3 +1,8 @@
+var BUILD_SIZE = process.argv[2];
+if (!BUILD_SIZE){
+  console.error('SPECIFY GRAPH SIZE');
+  process.exit();
+}
 
 /**
  * Module dependencies.
@@ -30,8 +35,7 @@ app.configure('production', function(){
 });
 
 mongoat.db.open(function(e, db_client){
-  var build_size = 1000;
-  build(db_client, build_size, mongoat.do_query, function(e, graph){
+  build(db_client, BUILD_SIZE, mongoat.do_query, function(e, graph){
     var resources = {
       graph : graph,
       do_query : mongoat.do_query,
