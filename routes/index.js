@@ -32,6 +32,6 @@ exports.rebuild = function(r, req, res, cb){
 exports.persist = function(r, req, res){
   console.log('persisting graph to disk');
   persist(r.graph, graph_conf.persist_loc, function(e, size){
-    res.end(JSON.stringify({e:e, msg: size+' node graph persisted'}));
+    res.end(JSON.stringify({e:e, data: size+' node graph persisted'}));
   });
 };

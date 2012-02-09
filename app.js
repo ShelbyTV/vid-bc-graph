@@ -82,7 +82,7 @@ mongoat.db.open(function(e, db_client){
         resources.graph = _graph;
         resources.popularity = Object.keys(resources.graph);
         sort(resources.popularity, resources.graph);
-        res.end(JSON.stringify({e:e, size:Object.keys(resources.graph).length}));
+        res.end(JSON.stringify({e:e, data:Object.keys(resources.graph).length}));
       });
     });
 
